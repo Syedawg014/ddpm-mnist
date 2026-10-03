@@ -44,7 +44,7 @@ def testingImage(model,device):
     t = torch.full((1,), sample_timestep, device=device, dtype=torch.long)
     noisy_images = scheduler.add_noise(randomimage, noise, t)
     xt = noisy_images
-    plt.title("IMAGE WITH PURE NOISE ADDED")
+    plt.title("IMAGE WITH NOISE ADDED")
     plt.imshow(noisy_images.squeeze(0).cpu().permute(1,2,0).numpy(),cmap="gray")
     plt.show()
     with torch.no_grad():
