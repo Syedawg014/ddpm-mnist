@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from torch.optim import Adam
+from torch.optim import AdamW
 
 from scheduler import LinearNoiseScheduler
 from modelArch import UNet
@@ -12,12 +12,11 @@ def train():
     num_timesteps = 1000
     scheduler = LinearNoiseScheduler(num_timesteps=num_timesteps, beta_start=0.0001, beta_end=0.02)
     train_loader,train_dataset = get_dataloader(batch_size=128)
-
     model = UNet(in_channels=1, t_emb_dim=128).to(device)
-    num_epochs =5
+    num_epochs =10
     lr = 2e-4
 
-    optimizer = Adam(model.parameters(), lr=lr)
+    optimizer = AdamW(model.parameters(),weight_decay=0.01, lr=lr)
     criterion = nn.MSELoss()
 
     model.train()
