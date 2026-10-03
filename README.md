@@ -2,7 +2,7 @@ DENOISING DIFFUSION PROBABILISTIC MODEL TRAINED ON MNIST HANDWRITTEN DIGITS
 | Parameter | Value |
 | --- | --- |
 | **Optimizer** | AdamW |
-| **Weight Decay** | $1 \times 10^{-3}$ (`1e-3`) |
+| **Weight Decay** | $1 \times 10^{-2}$ (`1e-2`) |
 | **Learning Rate** | $2 \times 10^{-4}$ (`2e-4`) |
 | **Loss Function** | MSE (Mean Squared Error) |
 | **Image Dimensions** | $1 \times 28 \times 28$ |
